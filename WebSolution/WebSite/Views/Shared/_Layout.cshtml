@@ -1,0 +1,23 @@
+﻿@using WebSite.Helpers
+@{
+    var controller = Url.RequestContext.RouteData.Values["controller"].ToString();
+    var action = Url.RequestContext.RouteData.Values["action"].ToString();
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>82 DAYS IN APRIL</title>
+    <meta name="viewport" content="width=device-width" />
+    
+</head>
+<body>
+    <div id="wrapper">
+        <div id="partial-content-wrapper">
+            @RenderBody()
+        </div>
+    </div>
+    <script type="text/javascript">
+        global.initPage()
+    </script>
+</body>
+</html>

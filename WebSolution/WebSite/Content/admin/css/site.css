@@ -1,0 +1,358 @@
+﻿html
+{
+    overflow-y: scroll;
+}
+body
+{
+    font-size: .85em;
+    color: #232323;
+    background-color: #fff;
+}
+body, select, input, textarea, button
+{
+    font-family: Arial;
+}
+header, footer, nav, section
+{
+    display: block;
+}
+
+footer
+{
+    text-align: center;
+}
+.float-left
+{
+    float: left;
+}
+
+.float-right
+{
+    float: right;
+    text-align: right;
+}
+.text-align-right-wrapper
+{
+    text-align: right;
+}
+.text-align-center-wrapper
+{
+    text-align: center;
+}
+.hide-first
+{
+    display: none;
+}
+/* Styles for basic forms
+-----------------------------------------------------------*/
+fieldset
+{
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+
+legend
+{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+textarea
+{
+    min-height: 75px;
+}
+
+.editor-label
+{
+    margin: 1em 0 0 0;
+}
+
+.editor-field
+{
+    margin: 0.5em 0 0 0;
+}
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    color: #f00;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #f00 !important;
+    background-color: #fee;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}
+.validation-summary-errors ul
+{
+    margin: 0;
+}
+
+.list-table-wrapper
+{
+    background-color: #fff;
+    margin: 7px 0;
+    border: 1px solid #ccc;
+    min-height: 452px;
+}
+.list-table-wrapper.no-pager
+{
+    min-height:83px;
+}
+.list-table-wrapper tr:hover
+{
+    background-color: #fffdef;
+}
+.list-table-wrapper .head-row:hover
+{
+    background: none;
+}
+.list-table-wrapper label
+{
+    padding: 10px 15px;
+}
+.list-table-wrapper td
+{
+    padding: 0;
+}
+.list-table-wrapper td label
+{
+    font-weight: normal;
+}
+.list-table-wrapper th, .list-table-wrapper td
+{
+    border-bottom: 1px solid #ccc;
+}
+.list-table-wrapper .over-flow-hide
+{
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: 40px;
+    height: 40px;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.list-table-wrapper label
+{
+    margin-bottom: 0;
+    cursor: auto;
+}
+.all-item-table
+{
+    border: 1px solid #ccc;
+}
+.all-item-table td, .all-item-table th
+{
+    border-bottom: 1px solid #ccc;
+    padding: 10px 15px;
+}
+.page-size-last-row td
+{
+    border-bottom: none;
+}
+.current-page-item-wrapper
+{
+    text-decoration: underline;
+}
+.sub-header-wrapper
+{
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+.sub-header-wrapper a
+{
+    margin-right: 10px;
+}
+.sub-header-wrapper a:first-child
+{
+    padding-left: 0;
+}
+.active-sub-header
+{
+    text-decoration: underline;
+}
+.item-wrapper
+{
+    padding: 15px 30px 15px 0;
+}
+.image-text-wrapper
+{
+    text-align: center;
+}
+.save-files-wrapper
+{
+    padding-left: 16px;
+}
+#item-editor-wrapper
+{
+    display: none;
+}
+#item-editor-image-wrapper
+{
+    width: 125px;
+}
+.image-wrapper
+{
+    width: 125px;
+    height: 125px;
+    overflow: hidden;
+    text-align: center;
+}
+.ui-datepicker th
+{
+    font-size: 0.85em;
+}
+input.date-picker
+{
+    width: 107px;
+    cursor: pointer !important;
+}
+.ui-datepicker-trigger
+{
+    cursor: pointer;
+}
+.site-map-wrapper a:first-child
+{
+    padding-left: 0;
+}
+/*Icons*/
+.icon-detail, .icon-unpublish, .icon-publish, .icon-delete, .icon-top, .icon-up, .icon-down, .icon-bottom
+{
+    width: 24px;
+    height: 24px;
+    background-position: center center;
+    text-decoration: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+.icon-detail
+{
+    background-image: url(images/iconDetail.png);
+}
+.icon-unpublish
+{
+    background-image: url(images/iconUnpublish.png);
+}
+.icon-publish
+{
+    background-image: url(images/iconPublish.png);
+}
+.icon-delete
+{
+    background-image: url(images/iconDelete.png);
+}
+.icon-top
+{
+    background-image: url(images/iconTop.png);
+}
+.icon-up
+{
+    background-image: url(images/iconUp.png);
+}
+.icon-down
+{
+    background-image: url(images/iconDown.png);
+}
+.icon-bottom
+{
+    background-image: url(images/iconBottom.png);
+}
+input[name='delete'].toggle
+{
+    border: none;
+}
+.btn-group button
+{
+    margin-top: 0;
+}
+.success-message-image
+{
+    height: 86px;
+    width: 80px;
+    background: url(images/msssageSuccessBg.png) no-repeat 30px center;
+}
+.success-message-text
+{
+    color: Green;
+    padding-left: 15px;
+}
+.fail-message-image
+{
+    height: 86px;
+    width: 80px;
+    background: url(images/messageFailBg.png) no-repeat 30px center;
+}
+.fail-message-text
+{
+    color: Orange;
+    padding-right: 0;
+}
+/*.cleditorMain {
+    margin-bottom:9px;
+}*/
+.cleditorMain textarea
+{
+    border: none;
+}
+#message-wrapper
+{
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.sidebar-nav-active-item
+{
+    background: #e0e0e8;
+}
+.inline-form
+{
+    padding: 0 15px;
+    margin: 0;
+}
+.inline-form input[type='text']
+{
+    margin:0;
+}
+.pager-wrapper a, .pager-wrapper span
+{
+    margin-left:5px;
+}
+.btn
+{
+    min-width:75px;
+}
+.navbar .brand
+{
+    color: #4fb9ed;
+}
+.blank-breaker {
+    height:20px;
+}
+.editor-field input {
+    margin-bottom:0;
+}
+.crop-enabled
+{
+    cursor:pointer;
+}

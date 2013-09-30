@@ -1,0 +1,126 @@
+﻿@using MvcSiteMapProvider.Web.Html
+@using WebSite.Helpers
+@{
+    //var user = ViewBag.UserAccount as Domain.Entities.User;
+    var controller = Url.RequestContext.RouteData.Values["controller"].ToString().ToLower();
+    var action = Url.RequestContext.RouteData.Values["action"].ToString().ToLower();
+    //var config = ViewBag.SiteConfig as Domain.Entities.SiteConfig;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @*<meta http-equiv="X-UA-Compatible" content="IE=9" />*@
+    <title>The Resto Guide</title>
+    <link type="text/css" rel="Stylesheet" href="~/Content/jquery/css/jquery-ui.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/jquery/css/jquery.ui.accordion.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/jquery/css/jquery.ui.all.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/jquery/css/jquery.ui.autocomplete.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/jquery/css/jquery.ui.base.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/jquery/css/jquery.ui.button.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/jquery/css/jquery.ui.core.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/jquery/css/jquery.ui.datepicker.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/jquery/css/jquery.ui.dialog.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/jquery/css/jquery.ui.progressbar.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/jquery/css/jquery.ui.resizable.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/jquery/css/jquery.ui.selectable.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/jquery/css/jquery.ui.slider.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/jquery/css/jquery.ui.tabs.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/jquery/css/jquery.ui.theme.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/bootstrap/css/bootstrap.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/bootstrap/css/theme.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/cleditor/css/jquery.cleditor.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/colorbox/css/colorbox.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/jcrop/css/jquery.Jcrop.min.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/admin/css/site.css?_=@(DateTime.Now.Ticks)" />
+    <script type="text/javascript" src="~/Content/jquery/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="~/Content/jquery/js/jquery-ui-1.10.2.js"></script>
+    <script type="text/javascript" src="~/Content/jquery/js/jquery.unobtrusive-ajax.min.js"></script>
+    <script type="text/javascript" src="~/Content/jquery/js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="~/Content/jquery/js/jquery.ui.datepicker.min.js"></script>
+    <script type="text/javascript" src="~/Content/jquery/js/modernizr-2.5.3.js"></script>
+    <script type="text/javascript" src="~/Content/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="~/Content/cleditor/js/jquery.cleditor.min.js"></script>
+    <script type="text/javascript" src="~/Content/colorbox/js/jquery.colorbox-min.js"></script>
+    <script type="text/javascript" src="~/Content/jcrop/js/jquery.Jcrop.min.js"></script>
+    <script type="text/javascript" src="~/Content/admin/js/adminGlobal.js?_=@(DateTime.Now.Ticks)"></script>
+</head>
+<!--[if lt IE 7 ]> <body class="ie ie6"> <![endif]-->
+<!--[if IE 7 ]> <body class="ie ie7 "> <![endif]-->
+<!--[if IE 8 ]> <body class="ie ie8 "> <![endif]-->
+<!--[if IE 9 ]> <body class="ie ie9 "> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<body class="">
+    <!--<![endif]-->
+    <div class="navbar">
+        <div class="navbar-inner">
+            <ul class="nav pull-right">
+                <li id="fat-menu" class="dropdown"><a href="#" role="button" class="dropdown-toggle"
+                    data-toggle="dropdown"><i class="icon-user"></i>admin<i class="icon-caret-down">
+                    </i></a>
+                    <ul class="dropdown-menu">
+                        @*<li>@Html.ActionLink("Change Password", "ChangePassword", "Account")</li>
+                        <li class="divider"></li>*@
+                        <li>@Html.ActionLink("Logout", "Logout", "Home")</li>
+                    </ul>
+                </li>
+            </ul>
+            <a class="brand" href="~/" target="_blank">The Resto Guide</a>
+        </div>
+    </div>
+    <div class="sidebar-nav">
+        <a href="#config-menu" class="nav-header" data-toggle="collapse"><i class="icon-briefcase">
+        </i>Config</a>
+        <ul id="config-menu" class='nav nav-list collapse in'>
+            <li>@Html.ActionLink("Movie Url", "Index", "SiteConfig", null, new { @class = (controller == "siteconfig") ? "sidebar-nav-active-item" : "" })</li>
+            <li>@Html.ActionLink("Background Music", "Index", "SiteConfigMusic", null, new { @class = (controller == "siteconfigmusic") ? "sidebar-nav-active-item" : "" })</li>
+        </ul>
+    </div>
+    <div class="content">
+        <ul class="breadcrumb">
+            @{
+                var siteMap = Html.MvcSiteMap();
+            }
+            @siteMap.SiteMapPath()
+        </ul>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="row-fluid">
+                    @if (TempData["message"] != null)
+                    {
+                        <div class="alert alert-info">
+                            <button type="button" class="close" data-dismiss="alert">
+                                ×</button>
+                            <strong>@TempData["message"]</strong>
+                        </div>
+                    }
+                    <div id="message-wrapper" class="alert alert-info hide-first">
+                        <button type="button" class="close">
+                            ×</button>
+                        <strong>Completed</strong>
+                    </div>
+                    <div id="partial-content-wrapper">
+                        @RenderBody()
+                    </div>
+                    <div style="height:15px;"></div>
+                    <div id="file-uploader" class="well hide-first file-upload-wrapper">
+                        @*<legend>Upload Images</legend>*@
+                        @Html.Partial("_MvcFileupload", new MvcFileUploader.Models.FileUploadView() { FileTypes = @"/(\.|\/)(jpe?g|png)$/i", MaxFileSizeInBytes = 5000000, UploadUrl = Url.Action("UploadFile", "FileUpload"), UI = MvcFileUploader.Models.UploadUI.Bootstrap })
+                        <div class="save-files-wrapper">
+                            <input type="button" value="Save" class="save-files btn-action-partial btn" />
+                            <input type="button" value="Back" class="back-to-index btn-action btn" />
+                            <span class="fail-message-text save-file-message-wrapper"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="btn-color-box-trigger"></div>
+    <input type="hidden" id="image-crop-canvas-url" value="@Url.Action("CropImageCanvas", "FileUpload")" />
+    <input type="hidden" id="confirm-image-size-url" value="@Url.Action("ConfirmImageSize", "FileUpload")" />
+    <script type="text/javascript">
+        adminGlobal.initPage();
+    </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+﻿<div class="sub-header-wrapper clearfix">
+    <div class="float-left">
+        @foreach (var item in WebSite.Helpers.EnumHelper.LanguageDictionary)
+        {
+            <a href="javascript:void(0);" class="tab-controller" data-target="@("language-wrapper-" + item.Value)">@item.Value</a>
+        }
+    </div>
+    <div id="message-wrapper" class="float-left">
+    </div>
+</div>

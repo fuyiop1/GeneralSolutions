@@ -1,0 +1,12 @@
+﻿<div style="width:@(ViewBag.ImageWidth)px;height:@(ViewBag.ImageHeight + 50)px;">
+    <img src="@ViewBag.ImageSrcForDisPlay" alt="@DateTime.Now.Ticks" id="crop-image" />
+    <form action="javascript:;" id="corp-form" style="margin:10px 0 5px;" >
+        <input type="hidden" name="_" value="@DateTime.Now.Ticks" />
+        <input type="hidden" name="imageUrl" value="@ViewBag.ImageSrc" />
+        <input type="hidden" name="x" id="crop-x" />
+        <input type="hidden" name="y" id="crop-y" />
+        <input type="hidden" name="width" id="crop-width" />
+        <input type="hidden" name="height" id="crop-height" />
+        <button id="btn-crop-image" class="btn" data-action="@Url.Action("CropImage", "FileUpload")">Crop</button>
+    </form>
+</div>

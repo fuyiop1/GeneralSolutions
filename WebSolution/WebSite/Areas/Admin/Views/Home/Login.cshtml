@@ -1,0 +1,82 @@
+﻿@model WebSite.Areas.Admin.Models.AdminLogin
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>The Resto Guide</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/jquery/css/jquery-ui.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/jquery/css/jquery.ui.accordion.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/jquery/css/jquery.ui.all.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/jquery/css/jquery.ui.autocomplete.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/jquery/css/jquery.ui.base.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/jquery/css/jquery.ui.button.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/jquery/css/jquery.ui.core.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/jquery/css/jquery.ui.datepicker.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/jquery/css/jquery.ui.dialog.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/jquery/css/jquery.ui.progressbar.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/jquery/css/jquery.ui.resizable.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/jquery/css/jquery.ui.selectable.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/jquery/css/jquery.ui.slider.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/jquery/css/jquery.ui.tabs.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/jquery/css/jquery.ui.theme.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/bootstrap/css/bootstrap.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/bootstrap/css/theme.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/admin/css/site.css" />
+    <script type="text/javascript" src="~/Content/jquery/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="~/Content/jquery/js/jquery-ui-1.10.2.js"></script>
+    <script type="text/javascript" src="~/Content/jquery/js/jquery.unobtrusive-ajax.min.js"></script>
+    <script type="text/javascript" src="~/Content/jquery/js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="~/Content/jquery/js/jquery.ui.datepicker.min.js"></script>
+    <script type="text/javascript" src="~/Content/jquery/js/modernizr-2.5.3.js"></script>
+    <script type="text/javascript" src="~/Content/bootstrap/js/bootstrap.js"></script>
+</head>
+<!--[if lt IE 7 ]> <body class="ie ie6"> <![endif]-->
+<!--[if IE 7 ]> <body class="ie ie7 "> <![endif]-->
+<!--[if IE 8 ]> <body class="ie ie8 "> <![endif]-->
+<!--[if IE 9 ]> <body class="ie ie9 "> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<body class="">
+    <!--<![endif]-->
+    <div class="navbar">
+        <div class="navbar-inner">
+            <ul class="nav pull-right">
+            </ul>
+            <a class="brand" href="~/" target="_blank">The Resto Guide</a>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="dialog">
+            @Html.ValidationSummary(false)
+            <div class="block">
+                <p class="block-heading">
+                    Sign In</p>
+                <div class="block-body">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.HiddenFor(x => x.ReturnUrl)
+                        <label>
+                            Username</label>
+                        @Html.TextBoxFor(x => x.Admin.UserName, new { @class="span12" })
+                        <label>
+                            Password</label>
+                        @Html.PasswordFor(x => x.Admin.Password, new { @class = "span12" })
+                        <input type="submit" class="btn btn-primary pull-right" value="Sign In" />
+                        <label class="remember-me">
+                            @Html.CheckBoxFor(x => x.IsRememberAccount)
+                            Remember me</label>
+                        <div class="clearfix">
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+    </script>
+</body>
+</html>
