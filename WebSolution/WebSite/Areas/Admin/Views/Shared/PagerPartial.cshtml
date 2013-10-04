@@ -8,11 +8,11 @@
                 <span>Total @Model.PageCount pages</span>
             </div>
             <div class="float-right">
-                <a href="javascript:void(0);" class="@btnActionPartialClass page-first-last-item" data-action="@Url.Action(Model.Action, Model.Controller, Model.RouteValueDic)">First</a>
+                <a href="javascript:;" class="@btnActionPartialClass page-first-last-item" data-action="@Url.Action(Model.Action, Model.Controller, Model.RouteValueDic)">First</a>
                 @{
                     Model.ChangePageIndex(Model.PreviousPageIndex);
                 }
-                <a href="javascript:void(0);" class="@btnActionPartialClass" data-action="@Url.Action(Model.Action, Model.Controller, Model.RouteValueDic)">&lt;</a>
+                <a href="javascript:;" class="@btnActionPartialClass" data-action="@Url.Action(Model.Action, Model.Controller, Model.RouteValueDic)">&lt;</a>
 
                 @for (int j = Model.DisplayPageStartIndex; j <= Model.DisplayPageEndIndex; j++)
                 {
@@ -23,19 +23,19 @@
                     else
                     {
                         Model.ChangePageIndex(j);
-                        <a href="javascript:void(0);" class="@btnActionPartialClass" data-action="@Url.Action(Model.Action, Model.Controller, Model.RouteValueDic)">@j</a>
+                        <a href="javascript:;" class="@btnActionPartialClass" data-action="@Url.Action(Model.Action, Model.Controller, Model.RouteValueDic)">@j</a>
                     }
                 }
 
                 @{
                     Model.ChangePageIndex(Model.NextPageIndex);
                 }
-                <a href="javascript:void(0);" class="@btnActionPartialClass" data-action="@Url.Action(Model.Action, Model.Controller, Model.RouteValueDic)">&gt;</a>
+                <a href="javascript:;" class="@btnActionPartialClass" data-action="@Url.Action(Model.Action, Model.Controller, Model.RouteValueDic)">&gt;</a>
 
                 @{
                     Model.ChangePageIndex(Model.PageCount);
                 }
-                <a href="javascript:void(0);" class="@btnActionPartialClass page-first-last-item" data-action="@Url.Action(Model.Action, Model.Controller, Model.RouteValueDic)">Last</a>
+                <a href="javascript:;" class="@btnActionPartialClass page-first-last-item" data-action="@Url.Action(Model.Action, Model.Controller, Model.RouteValueDic)">Last</a>
             </div>
         }
 </div>

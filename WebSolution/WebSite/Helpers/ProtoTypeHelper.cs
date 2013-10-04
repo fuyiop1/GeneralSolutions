@@ -22,7 +22,7 @@ namespace WebSite.Helpers
             var result = string.Empty;
             if (string.IsNullOrWhiteSpace(val))
             {
-                result = "javascript:void(0)";
+                result = "javascript:;";
             }
             else
             {
