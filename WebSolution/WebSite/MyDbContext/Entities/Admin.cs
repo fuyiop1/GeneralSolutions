@@ -8,7 +8,7 @@ namespace WebSite.MyDbContext.Entities
 {
     public class Admin
     {
-        public virtual int Id { get; set; }
+        public virtual int ID { get; set; }
 
         [Required(ErrorMessage = "Please enter your username")]
         public virtual string UserName { get; set; }

@@ -2,25 +2,6 @@
 
     global.initPage = function () {
         initPartial();
-        $(".btn-action-partial").live("click", function () {
-            btnActionPartialClick($(this));
-        });
-        $(".enter-password-btn").live("click", function () {
-            var sender = $(this);
-            sender.hide();
-            sender.siblings().show();
-        });
-        global.initAfterPartial();
-        $("#menu a").click(function () {
-            var sender = $(this);
-            if (sender.hasClass("tondo")) {
-                return;
-            }
-            sender.siblings().removeClass("cur");
-            if (!sender.hasClass("logo")) {
-                sender.addClass("cur");
-            }
-        });
     }
 
 
@@ -80,6 +61,9 @@
     }
 
     global.initAfterPartial = function () {
+        $(".btn-action-partial").click(function () {
+            btnActionPartialClick($(this));
+        });
         $(".auto-height").each(function () {
             autoSizeTextarea(this);
         });

@@ -207,7 +207,7 @@ namespace WebSite.Areas.Admin.Controllers
             {
                 var target = list
                     .OrderBy(x => x.TimeForSort).FirstOrDefault();
-                if (target.Id != model.Id)
+                if (target.ID != model.ID)
                 {
                     var temp = target.TimeForSort;
                     target.TimeForSort = model.TimeForSort;
