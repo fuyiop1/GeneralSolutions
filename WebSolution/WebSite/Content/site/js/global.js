@@ -1,6 +1,7 @@
 ﻿(function (global, $, undefined) {
 
     global.initPage = function () {
+        global.initAfterPartial();
         initPartial();
     }
 
@@ -26,8 +27,9 @@
                     if (sender.data("target")) {
                         targetId = sender.data("target");
                     }
-                    $("#" + targetId).html(result);
-                    global.initAfterPartial();
+                    var container = $("#" + targetId)
+                    container.html(result);
+                    global.initAfterPartial(container);
                 },
                 error: function () {
                 },
@@ -62,7 +64,7 @@
         }
     }
 
-    global.initAfterPartial = function () {
+    global.initAfterPartial = function (container) {
         if (!container) {
             container = $(document.body);
         }

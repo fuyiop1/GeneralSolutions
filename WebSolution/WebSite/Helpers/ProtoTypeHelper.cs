@@ -26,6 +26,7 @@ namespace WebSite.Helpers
             }
             else
             {
+                val = val.Trim();
                 if (!val.StartsWith("http"))
                 {
                     result = string.Format("http://{0}", val);
